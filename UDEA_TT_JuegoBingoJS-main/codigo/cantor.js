@@ -18,12 +18,20 @@ function Cantor() {
 
     //metodo para sacra balotas
     this.sacarBalota = function () {
+        let totalSacadas = this.balotasSacadas.filter(valor == true).length;
+        if(totalSacadas < 75) {
         let balota = Math.floor(Math.random() * 75) + 1;
+       while(this.balotasSacadas[balota - 1]){
+        Math.floor(Math.random() * 75) + 1;
+       }
         this.balotasSacadas[balota - 1] = true;
         this.ultimaBalota = balota;
 
-        window.alert("esta vez si funciona")
+  
+    }
+    else{
+        window.alert("ya se acabaron las balotas, preste atención por favor");
     }
 }
 
-
+}
